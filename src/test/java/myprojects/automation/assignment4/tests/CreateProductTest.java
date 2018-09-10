@@ -22,14 +22,11 @@ public class CreateProductTest extends BaseTest {
     public void checkNewProduct() {
         driver.get(Properties.getBaseUrl());
         driver.findElement(By.cssSelector("a[class = 'all-product-link pull-xs-left pull-md-right h4']")).click();
-        driver.findElement(By.cssSelector("a[class='next js-search-link']")).click();
-        driver.findElement(By.cssSelector("a[class='next js-search-link']")).click();
-
         actions.checkNewProduct();
     }
 
      @Test(dependsOnMethods = "checkNewProduct")
-     public void checkNewProductName() {
+     public void checkNewProductOptions() {
         driver.findElement(By.cssSelector(".products.row > article:last-child * h1 > a")).click();
         actions.checkNameNewProduct();
         actions.checkQtyNewProduct();
